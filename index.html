@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,25 +59,14 @@
             font-weight: bold;
         }
 
-        .button {
-            display: inline-block;
-            padding: 15px 35px;
-
-            background: #5865F2;
-            color: white;
-
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-
-            border-radius: 8px;
-
-            transition: transform 0.2s, opacity 0.2s;
+        .redirect {
+            color: #888;
+            font-size: 14px;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+        .redirect span {
+            color: #ffffff;
+            font-weight: bold;
         }
 
         .info {
@@ -102,12 +92,9 @@
             ● COMMUNITY ONLINE
         </div>
 
-        <a
-            class="button"
-            href="/discord"
-        >
-            JOIN DISCORD
-        </a>
+        <div class="redirect">
+            Connecting to Discord in <span id="countdown">1</span>...
+        </div>
 
         <div class="info">
             Factions · Survival · Events · PvE/PvP<br>
@@ -116,5 +103,23 @@
 
     </main>
 
+    <script>
+        let seconds = 1;
+
+        const countdown = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            seconds--;
+
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = "/discord";
+            } else {
+                countdown.textContent = seconds;
+            }
+        }, 1000);
+    </script>
+
 </body>
 </html>
+```
