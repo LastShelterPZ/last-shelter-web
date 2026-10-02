@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/TU_INVITACION",
+      "permanent": false
+    }
+  ]
+}
